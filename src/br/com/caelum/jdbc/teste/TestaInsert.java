@@ -1,7 +1,6 @@
 package br.com.caelum.jdbc.teste;
 
-import java.sql.*;
-import br.com.caelum.jdbc.ConnectionFactory;
+
 import br.com.caelum.jdbc.modelo.*;
 import br.com.caelum.jdbc.dao.*;
 import java.util.Calendar;
@@ -21,7 +20,7 @@ public class TestaInsert {
 		System.out.println("Email do contato: ");
 		String email = leia.nextLine();
 		contato.setEmail(email);
-		System.out.println("Endereço do contato: ");
+		System.out.println("EndereÃ§o do contato: ");
 		String endereco = leia.nextLine();
 		contato.setEndereco(endereco);
 		System.out.println("Data de nascimento do contato: " + Calendar.getInstance());

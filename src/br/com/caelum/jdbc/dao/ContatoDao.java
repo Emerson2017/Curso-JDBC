@@ -1,19 +1,18 @@
 package br.com.caelum.jdbc.dao;
+
 import java.sql.*;
-import java.util.Calendar;
-
-import javax.management.RuntimeErrorException;
-import javax.naming.spi.DirStateFactory.Result;
-
 import br.com.caelum.jdbc.ConnectionFactory;
 import br.com.caelum.jdbc.modelo.Contato;
 
+
+
 public class ContatoDao {
 	
-	Connection conexao;
+	private Connection conexao;
+	
 	
 	public ContatoDao(){
-		 conexao = new ConnectionFactory().getConnection(); 
+		 this.conexao = new ConnectionFactory().pegarConnection(); 
 	}
 	
 	public boolean adciona(Contato contato) {
@@ -31,8 +30,10 @@ public class ContatoDao {
 			stmt.execute();
 			stmt.close();
 			
-			 return true;
+			System.out.println("Registro cadastrado com sucesso!");
+			System.out.println("Conexao fechada");
 			
+			return true;
 		}catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -60,7 +61,7 @@ public class ContatoDao {
 				System.out.println("id do contato: " +id);
 				System.out.println("Nome do contato: " +nome);
 				System.out.println("Email do contato: " +email);
-				System.out.println("Endereço do contato: " +endereco);
+				System.out.println("Endereï¿½o do contato: " +endereco);
 				System.out.println("########################################################");
 			}
 		}catch (Exception e){
@@ -97,7 +98,7 @@ public class ContatoDao {
 				
 				System.out.println("Nome do contato: " +nome);
 				System.out.println("Email do contato: " +email);
-				System.out.println("Endereço do contato: " +endereco);
+				System.out.println("Endereï¿½o do contato: " +endereco);
 				System.out.println("########################################################");
 				
 			}
@@ -114,32 +115,4 @@ public class ContatoDao {
 
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
